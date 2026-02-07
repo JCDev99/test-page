@@ -6,31 +6,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Contacto</h1>
-  </header>
-  <nav>
-    <a href="index.html">Inicio</a>
-    <a href="about.html">Sobre mí</a>
-    <a href="contact.html">Contacto</a>
-  </nav>
+  <div id="header"></div>
   <main>
-    <h2>Envíame un mensaje</h2>
+    <h2>Contacto</h2>
     <form>
-      <label for="nombre">Nombre:</label><br>
-      <input type="text" id="nombre" name="nombre"><br><br>
-      
-      <label for="email">Correo:</label><br>
-      <input type="email" id="email" name="email"><br><br>
-      
-      <label for="mensaje">Mensaje:</label><br>
-      <textarea id="mensaje" name="mensaje"></textarea><br><br>
-      
+      <label>Nombre:</label><br>
+      <input type="text"><br><br>
+      <label>Email:</label><br>
+      <input type="email"><br><br>
+      <label>Mensaje:</label><br>
+      <textarea></textarea><br><br>
       <button type="submit">Enviar</button>
     </form>
   </main>
-  <footer>
-    <p>© 2026 Juan - Todos los derechos reservados</p>
-  </footer>
+  <div id="footer"></div>
+
+  <script>
+    fetch("header.html").then(r => r.text()).then(d => document.getElementById("header").innerHTML = d);
+    fetch("footer.html").then(r => r.text()).then(d => document.getElementById("footer").innerHTML = d);
+  </script>
 </body>
 </html>
